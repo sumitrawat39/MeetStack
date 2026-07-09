@@ -4,18 +4,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme{
-  --color-dark-1: #1C1F2E;
+@theme {
+  --color-dark-1: #1c1f2e;
   --color-dark-2: #161925;
-  --color-blue-1: #0E78F9;
-};
+  --color-blue-1: #0e78f9;
+  --color-orange-1: #ff742e;
+  --color-purple-1: #830ef9;
+  --color-yellow-1: #f9a90e;
+  --background-image-hero: url("/images/hero-background.png");
+  --color-sky-1: #c9ddff;
+}
 
-@layer utilities{
-  .flex-center{
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+@layer utilities {
+  .flex-center {
     @apply flex justify-center items-center;
   }
 
-  .flex-between{
+  .flex-between {
     @apply flex justify-between items-center;
   }
 }
