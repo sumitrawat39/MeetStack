@@ -45,8 +45,7 @@ const MeetingTypeList = () => {
         data: {
           starts_at: values.dateTime.toISOString(),
           custom: {
-            description:
-              values.description || "Scheduled Meeting",
+            description: values.description || "Scheduled Meeting",
           },
         },
       });
@@ -60,9 +59,7 @@ const MeetingTypeList = () => {
     }
   };
 
-  const meetingLink = callDetails
-    ? `${window.location.origin}/meeting/${callDetails.id}`
-    : "";
+  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`;
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -113,9 +110,7 @@ const MeetingTypeList = () => {
         >
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <label className="text-base text-sky-1">
-                Description
-              </label>
+              <label className="text-base text-sky-1">Description</label>
 
               <Textarea
                 placeholder="Meeting Description"
@@ -131,13 +126,11 @@ const MeetingTypeList = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-base text-sky-1">
-                Date & Time
-              </label>
+              <label className="text-base text-sky-1">Date & Time</label>
 
               <ReactDatePicker
                 selected={values.dateTime}
-                onChange={(date:Date|null) => {
+                onChange={(date: Date | null) => {
                   if (date) {
                     setValues({
                       ...values,
